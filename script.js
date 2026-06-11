@@ -160,10 +160,19 @@ setInterval(updateClock, 1000);
         statusMsg.textContent = '✓ TRUY CẬP PHÒNG THÀNH CÔNG';
         statusMsg.className = 'status-msg success';
 
-        // Lưu mã phòng vào session
+        // Lưu mã phòng + server URL vào session
         sessionStorage.setItem('kr_authenticated', 'true');
         sessionStorage.setItem('kr_room_code', code.toUpperCase());
         sessionStorage.setItem('kr_login_time', Date.now().toString());
+
+        // Lưu server URL (nếu có)
+        const serverUrlInput = document.getElementById('serverUrl');
+        const serverUrl = serverUrlInput?.value.trim();
+        if (serverUrl) {
+            sessionStorage.setItem('kr_server_url', serverUrl);
+        } else {
+            sessionStorage.removeItem('kr_server_url');
+        }
 
         // Hiệu ứng henshin rồi chuyển trang
         overlay.classList.add('active');

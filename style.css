@@ -158,6 +158,19 @@ body {
     width: 100%; max-width: 380px;
     margin-top: 10px;
 }
+.server-url-wrapper {
+    margin-top: 8px;
+    max-width: 380px;
+}
+.server-url-wrapper .code-input-inner {
+    border: 1px solid var(--border);
+    padding: 0 12px;
+}
+.server-url-wrapper .code-input {
+    padding: 10px 0;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
 .input-border-anim {
     position: absolute; inset: -2px;
     border-radius: 14px;
