@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kamen Rider Admin Portal - Secure Access System">
+    <title>KAMEN RIDER — Login</title>
+    <link rel="icon" href="logo.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Particle Canvas Background -->
+    <canvas id="particleCanvas"></canvas>
+    <!-- Scan Lines Overlay -->
+    <div class="scanlines"></div>
+
+    <!-- Login Screen -->
+    <div class="login-screen" id="loginScreen">
+        <!-- Rotating Ring -->
+        <div class="rider-ring">
+            <div class="ring-segment"></div>
+            <div class="ring-segment"></div>
+            <div class="ring-segment"></div>
+            <div class="ring-segment"></div>
+        </div>
+
+        <!-- Logo -->
+        <div class="logo-container" id="logoContainer">
+            <div class="logo-glow"></div>
+            <img src="logo.png" alt="Kamen Rider Logo" class="logo-img" id="logoImg">
+            <div class="logo-pulse"></div>
+        </div>
+
+        <!-- Title -->
+        <h1 class="title">
+            <span class="title-kamen">KAMEN</span>
+            <span class="title-rider">RIDER</span>
+        </h1>
+        <p class="subtitle">ADMIN ACCESS PORTAL</p>
+
+        <!-- Code Input -->
+        <div class="code-input-wrapper" id="codeWrapper">
+            <div class="input-border-anim"></div>
+            <div class="code-input-inner">
+                <div class="input-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                    </svg>
+                </div>
+                <input type="password" id="adminCode" class="code-input" placeholder="NHẬP MÃ PHÒNG..." maxlength="20" autocomplete="off">
+                <button class="toggle-visibility" id="toggleVisibility" title="Hiện/Ẩn mã">
+                    <svg id="eyeIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                        <circle cx="12" cy="12" r="3"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Henshin Button -->
+        <button class="henshin-btn" id="henshinBtn">
+            <span class="btn-bg"></span>
+            <span class="btn-text">HENSHIN !</span>
+            <span class="btn-particles">
+                <span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span>
+            </span>
+        </button>
+
+        <!-- Status Message -->
+        <div class="status-msg" id="statusMsg"></div>
+
+        <!-- Decorative Lines -->
+        <div class="deco-line deco-left"></div>
+        <div class="deco-line deco-right"></div>
+
+        <!-- Bottom Info -->
+        <div class="bottom-info">
+            <span class="info-dot"></span>
+            <span>SECURE SYSTEM v3.0</span>
+            <span class="info-separator">|</span>
+            <span id="currentTime"></span>
+        </div>
+    </div>
+
+    <!-- Henshin Transition Overlay -->
+    <div class="henshin-overlay" id="henshinOverlay">
+        <div class="henshin-flash"></div>
+        <div class="henshin-text">HENSHIN!</div>
+        <div class="henshin-rings">
+            <div class="h-ring h-ring-1"></div>
+            <div class="h-ring h-ring-2"></div>
+            <div class="h-ring h-ring-3"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

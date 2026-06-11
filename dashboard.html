@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KAMEN RIDER — Command Center</title>
+    <link rel="icon" href="logo.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body class="dashboard-body">
+
+    <!-- ===== TOP HEADER ===== -->
+    <header class="top-header">
+        <div class="header-left">
+            <div class="room-code" id="roomCode"># 8OAABT</div>
+            <button class="icon-btn notify-btn" title="Thông báo"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><span class="notify-dot"></span></button>
+            <button class="icon-btn export-btn" title="Xuất"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button>
+            <div class="header-divider"></div>
+            <div class="layout-toggle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg> <span>- - - -</span></div>
+            <div class="header-divider"></div>
+            <div class="exam-status"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> <span>Chưa bắt đầu</span></div>
+            <div class="header-divider"></div>
+            <div class="toggle-switches">
+                <label class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+                <button class="icon-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></button>
+                <button class="icon-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></button>
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="tab-group">
+                <button class="tab-btn active">ALL</button>
+                <button class="tab-btn">EOS</button>
+                <button class="tab-btn">FS</button>
+                <button class="tab-btn">SEB</button>
+                <button class="tab-btn">OTHER</button>
+            </div>
+            <button class="icon-btn copy-btn" id="headerCopyBtn" title="Copy Answer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+            <button class="icon-btn delete-btn" id="headerDeleteBtn" title="Xóa tất cả tin nhắn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></button>
+        </div>
+    </header>
+
+    <!-- ===== MAIN LAYOUT ===== -->
+    <div class="main-layout">
+
+        <!-- LEFT SIDEBAR - CHAT -->
+        <aside class="sidebar-chat" id="sidebarChat">
+            <div class="chat-messages" id="chatMessages">
+                <!-- Tin nhắn sẽ hiện khi gửi mới -->
+            </div>
+
+            <!-- Answer Input Panel -->
+            <div class="answer-panel" id="answerPanel">
+                <div class="answer-panel-toggle" id="answerToggle">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+                    <span>Nhập đáp án</span>
+                </div>
+                <div class="answer-panel-body" id="answerBody">
+                    <div class="answer-type-select">
+                        <select id="answerType">
+                            <option value="multiple">Multiple Choice</option>
+                            <option value="single">Single Choice</option>
+                            <option value="text">Text</option>
+                        </select>
+                    </div>
+                    <div class="answer-grid" id="answerGrid"></div>
+                    <div class="answer-actions">
+                        <button class="answer-action-btn delete-answers"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg> Xóa</button>
+                        <button class="answer-action-btn send-answers"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Gửi đáp án (<span id="answerCount">0</span>)</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Input -->
+            <div class="chat-input-area">
+                <button class="chat-plus-btn" id="chatPlusBtn">+</button>
+                <input type="text" class="chat-input" id="chatInput" placeholder="Nhập tin nhắn...">
+                <button class="chat-send-btn" id="chatSendBtn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
+            </div>
+
+            <!-- Extra menu popup -->
+            <div class="chat-extra-menu" id="chatExtraMenu">
+                <button class="extra-menu-item" id="sendFileBtn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg> Gửi file</button>
+                <button class="extra-menu-item" id="sendTextBtn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg> Gửi đoạn văn bản</button>
+            </div>
+        </aside>
+
+        <!-- RESIZE HANDLE -->
+        <div class="resize-handle" id="resizeHandle"></div>
+
+        <!-- RIGHT MAIN CONTENT -->
+        <div class="main-content">
+            <!-- Image Viewer Area -->
+            <div class="image-area" id="imageArea">
+                <!-- Image Header -->
+                <div class="image-header">
+                    <div class="image-header-left">
+                        <div class="q-progress"><span class="q-current" id="qCurrent">0</span>/<span class="q-total" id="qTotal">0</span></div>
+                        <div class="q-timer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> <span id="qTimer">00:00</span></div>
+                    </div>
+                    <div class="image-header-right">
+                        <button class="img-tool-btn" id="uploadImgBtn" title="Thêm hình ảnh"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg> Thêm ảnh</button>
+                        <button class="img-tool-btn danger" id="deleteAllImgBtn" title="Xóa tất cả"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg> Xóa tất cả</button>
+                        <!-- Timer Setting -->
+                        <div class="timer-setting">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            <input type="number" id="timerMinutes" class="timer-input" value="30" min="1" max="999" title="Phút">
+                            <span class="timer-label">phút</span>
+                            <button class="img-tool-btn small" id="setTimerBtn">Đặt</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Display -->
+                <div class="image-display" id="imageDisplay">
+                    <!-- Empty State -->
+                    <div class="image-empty" id="imageEmpty">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <circle cx="8.5" cy="8.5" r="1.5"/>
+                            <polyline points="21 15 16 10 5 21"/>
+                        </svg>
+                        <p>Không có hình ảnh</p>
+                        <button class="upload-area-btn" id="uploadAreaBtn">+ Thêm hình ảnh</button>
+                    </div>
+                    <!-- Image Preview (shown when images exist) -->
+                    <div class="image-preview-container" id="imagePreviewContainer" style="display:none">
+                        <button class="img-nav-arrow left-arrow" id="imgPrev">‹</button>
+                        <img src="" alt="Preview" class="image-preview" id="imagePreview">
+                        <button class="img-nav-arrow right-arrow" id="imgNext">›</button>
+                        <button class="img-delete-current" id="deleteCurrentImg" title="Xóa ảnh này">×</button>
+                    </div>
+                </div>
+
+                <!-- Image Thumbnails Strip -->
+                <div class="image-thumbs-strip" id="imageThumbsStrip" style="display:none">
+                    <div class="image-thumbs" id="imageThumbs"></div>
+                </div>
+            </div>
+            <input type="file" id="fileInput" accept="image/*" multiple style="display:none">
+            <input type="file" id="chatFileInput" style="display:none">
+
+            <!-- Bottom Session Bar -->
+            <div class="session-bar">
+                <div class="session-bar-top">
+                    <div class="session-bottom-left">
+                        <img src="logo.png" alt="" class="session-logo-small">
+                    </div>
+                    <div class="session-bottom-right">
+                        <div class="session-indicator green"></div>
+                        <button class="session-tool-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></button>
+                        <button class="session-tool-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15.536 8.464a5 5 0 0 1 0 7.072"/><path d="M17.95 6.05a8 8 0 0 1 0 11.9"/><path d="M6 15H2v4"/><path d="M2 15l4.5-4.5"/></svg></button>
+                        <span class="session-lang">ENG</span>
+                        <span class="session-seb-badge">SEB</span>
+                    </div>
+                </div>
+                <div class="session-thumbnails-area">
+                    <div class="session-page-info">Page 2/2 (11-15/15)</div>
+                    <div class="session-thumbnails-row">
+                        <button class="thumb-nav-btn prev-thumb">‹</button>
+                        <div class="session-thumbnails" id="sessionThumbnails"></div>
+                        <button class="thumb-nav-btn next-thumb">›</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ===== COPY ANSWER MODAL ===== -->
+    <div class="modal-overlay" id="copyAnswerModal">
+        <div class="modal-card modal-lg">
+            <div class="modal-header-row">
+                <div>
+                    <h3 class="modal-title">Copy Answer</h3>
+                    <p class="modal-subtitle">Tạo nhanh nội dung gửi đáp án</p>
+                </div>
+                <button class="modal-close" id="copyModalClose">&times;</button>
+            </div>
+            <div class="modal-form-row">
+                <div class="modal-field">
+                    <label class="modal-field-label">ROOM CODE</label>
+                    <input type="text" id="copyRoomCode" class="modal-input" readonly>
+                </div>
+                <div class="modal-field">
+                    <label class="modal-field-label">EXAM CODE</label>
+                    <input type="text" id="copyExamCode" class="modal-input" placeholder="EXAM01">
+                </div>
+            </div>
+            <div class="modal-field">
+                <label class="modal-field-label">QUESTION TYPE</label>
+                <select id="copyQuestionType" class="modal-select">
+                    <option value="MUL">Multiple Choice</option>
+                    <option value="SIN">Single Choice</option>
+                    <option value="TXT">Text</option>
+                </select>
+                <span class="modal-hint">Format: 1a 2b 3bc 4a ...</span>
+            </div>
+            <div class="modal-field">
+                <label class="modal-field-label">MULTIPLE CHOICE ANSWERS</label>
+                <textarea id="copyAnswerInput" class="modal-textarea" placeholder="1a 2b 3bc 4a ..."></textarea>
+            </div>
+            <div class="modal-preview">
+                <label class="modal-field-label">PREVIEW:</label>
+                <div class="preview-box" id="copyPreviewBox">
+                    <div><strong>Room:</strong> <span id="previewRoom"></span></div>
+                    <div><strong>Exam Code:</strong> <span id="previewExam"></span></div>
+                    <div>&nbsp;</div>
+                    <div><strong id="previewTypeLabel">MUL:</strong> <span id="previewAnswers"></span></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-footer-btn clear-btn" id="copyClearBtn">Xóa nội dung</button>
+                <div class="modal-footer-right">
+                    <button class="modal-footer-btn close-btn" id="copyCloseBtn">Đóng</button>
+                    <button class="modal-footer-btn send-btn" id="copySendBtn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Gửi yêu cầu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SEND TEXT MODAL ===== -->
+    <div class="modal-overlay" id="textModal">
+        <div class="modal-card">
+            <h3 class="modal-title">Gửi đoạn văn bản</h3>
+            <div class="modal-field">
+                <div class="modal-field-row">
+                    <label class="modal-field-label">Nội dung văn bản</label>
+                    <span class="modal-char-count" id="textCharCount">0/40.000</span>
+                </div>
+                <textarea id="textModalContent" class="modal-textarea" placeholder="Nhập nội dung văn bản..." maxlength="40000"></textarea>
+            </div>
+            <div class="modal-actions">
+                <button class="modal-btn cancel-btn" id="textModalCancel">Hủy</button>
+                <button class="modal-btn confirm-btn" id="textModalConfirm">Gửi</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.socket.io/4.7.4/socket.io.min.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>
