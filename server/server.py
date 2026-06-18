@@ -31,14 +31,10 @@ os.makedirs(UPLOAD_DIR, exist_ok=True)
 app = Flask(__name__)
 app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", "seb-remote-2024")
 
-try:
-    import eventlet
-    eventlet.monkey_patch()
-    ASYNC_MODE = "eventlet"
-except ImportError:
-    ASYNC_MODE = "threading"
-
-socketio = SocketIO(app, cors_allowed_origins="*", async_mode=ASYNC_MODE)
+# Luôn dùng threading — tương thích Python 3.10+ và không cần eventlet
+ASYNC_MODE = "threading"
+socketio = SocketIO(app, cors_allowed_origins="*", async_mode=ASYNC_MODE,
+                    logger=False, engineio_logger=False)
 rooms = {}
 
 
